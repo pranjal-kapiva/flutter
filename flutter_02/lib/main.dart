@@ -15,7 +15,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(
-            seedColor: const Color.fromARGB(255, 30, 150, 0)),
+          seedColor: const Color.fromARGB(255, 30, 150, 0),
+        ),
         useMaterial3: true,
       ),
       home: const MyHomePage(title: 'Todo App'),
