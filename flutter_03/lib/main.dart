@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import './product.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -9,27 +9,30 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Product layout demo home page'),
+      home: const MyHomePage(title: 'Product Page'),
     );
   }
 }
 
 class MyHomePage extends StatelessWidget {
   const MyHomePage({Key? key, required this.title}) : super(key: key);
+
   final String title;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: const Text("Product layout demo home page"),
+          title: Text(title),
         ),
         body: ListView(
-          shrinkWrap: true,
-          children: [
+          // shrinkWrap: true,
+          children: const [
             ProductBox(
               name: "iPhone",
               description: "iPhone is the stylist phone ever",

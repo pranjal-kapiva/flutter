@@ -16,6 +16,10 @@ class _MyHomePageState extends State<MyHomePage> {
 
   final _todoController = TextEditingController();
 
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+
+  List<String> drawerButton = ["Menu", "About", "Setting"];
+
   @override
   void initState() {
     listData = todoList;
@@ -38,16 +42,73 @@ class _MyHomePageState extends State<MyHomePage> {
       status: false,
     );
     setState(() {
+      listData = todoList;
       todoList.add(newTodo);
     });
+  }
+
+  void _openDrawer() {
+    _scaffoldKey.currentState?.openDrawer();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: _scaffoldKey,
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(widget.title),
+        // leading: IconButton(
+        //   onPressed: () {
+        //     _openDrawer();
+        //   },
+        //   icon: const Icon(Icons.menu),
+        // ),
+        // actions: [
+        //   Container(
+        //       margin: const EdgeInsets.all(8),
+        //       child: ElevatedButton(
+        //         onPressed: () {
+        //           _openDrawer();
+        //         },
+        //         child: const Icon(
+        //           Icons.edit,
+        //         ),
+        //       ))
+        // ],
+      ),
+      endDrawer: Align(
+        alignment: Alignment.topRight,
+        child: Drawer(
+          child: ListView(
+            padding: EdgeInsets.zero,
+            children: [
+              const DrawerHeader(
+                decoration: BoxDecoration(
+                  color: Color.fromARGB(255, 30, 150, 0),
+                ),
+                child: Text(
+                  'Sidebar',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 16,
+                  ),
+                ),
+              ),
+              // _drawerSection(),
+              // _drawerSection(),
+              // _drawerSection(),
+              ListTile(
+                title: const Text('About'),
+                onTap: () {},
+              ),
+              ListTile(
+                title: const Text('Setting'),
+                onTap: () {},
+              ),
+            ],
+          ),
+        ),
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -122,7 +183,9 @@ class _MyHomePageState extends State<MyHomePage> {
                   onChanged: _handleSearchTextChanged,
                   decoration: const InputDecoration(
                     hintText: 'Search Task',
-                    prefixIcon: Icon(Icons.search),
+                    prefixIcon: Icon(
+                      Icons.search,
+                    ),
                   ),
                 ),
               ),
@@ -138,26 +201,34 @@ class _MyHomePageState extends State<MyHomePage> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     SizedBox(
-                      width: MediaQuery.of(context).size.width * 0.4,
+                      // margin: const EdgeInsets.all(2),
+                      width: MediaQuery.of(context).size.width * 0.6,
                       child: TextFormField(
                         controller: _todoController,
                         decoration: const InputDecoration(
                           labelText: "Enter Task",
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.all(
+                              Radius.circular(30),
+                            ),
+                          ),
                         ),
                       ),
                     ),
-                    ElevatedButton(
-                      style: const ButtonStyle(
-                        fixedSize: MaterialStatePropertyAll(
-                          Size(100, 30),
-                        ),
-                      ),
-                      onPressed: () {
-                        addToDoItem(_todoController.text);
-                        _todoController.clear();
-                      },
-                      child: const Text('ADD'),
-                    )
+                    Container(
+                        margin: const EdgeInsets.all(10),
+                        child: ElevatedButton(
+                          style: const ButtonStyle(
+                            fixedSize: MaterialStatePropertyAll(
+                              Size(100, 30),
+                            ),
+                          ),
+                          onPressed: () {
+                            addToDoItem(_todoController.text);
+                            _todoController.clear();
+                          },
+                          child: const Text('ADD'),
+                        )),
                   ],
                 ),
               ),
@@ -190,7 +261,11 @@ class _MyHomePageState extends State<MyHomePage> {
           Center(
             child: SizedBox(
               width: 80,
-              child: Text(todoItem.title),
+              child: Text(
+                todoItem.title,
+                overflow: TextOverflow.ellipsis,
+                maxLines: 1,
+              ),
             ),
           ),
           ElevatedButton(

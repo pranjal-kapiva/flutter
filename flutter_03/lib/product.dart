@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import './ratingbox.dart';
 
 class ProductBox extends StatelessWidget {
   const ProductBox(
@@ -8,6 +9,7 @@ class ProductBox extends StatelessWidget {
       required this.price,
       required this.image})
       : super(key: key);
+
   final String name;
   final String description;
   final int price;
@@ -22,18 +24,19 @@ class ProductBox extends StatelessWidget {
             child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: <Widget>[
-              Image.asset("assets/"),
+              Image.asset("assets/todo.jpg"),
               Expanded(
                   child: Container(
                       padding: const EdgeInsets.all(5),
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: <Widget>[
-                          Text(name,
+                          Text('Name: $name',
                               style:
                                   const TextStyle(fontWeight: FontWeight.bold)),
-                          Text(description),
-                          Text(price.toString()),
+                          Text('Description: $description'),
+                          Text('Price: $price'),
+                          const RatingBox(),
                         ],
                       )))
             ])));
