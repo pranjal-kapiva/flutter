@@ -37,7 +37,7 @@ class _MyHomePageState extends State<MyHomePage> {
           children: [
             Container(
               width: MediaQuery.of(context).size.width,
-              margin: const EdgeInsets.all(10),
+              margin: const EdgeInsets.all(20),
               decoration: BoxDecoration(
                 boxShadow: const [
                   BoxShadow(
@@ -397,9 +397,9 @@ class _MyHomePageState extends State<MyHomePage> {
               // color: Colors.yellow,
               margin: const EdgeInsets.only(
                 top: 20,
-                left: 10,
+                left: 20,
                 bottom: 10,
-                right: 10,
+                right: 20,
               ),
               child: const Text(
                 "Order Summary",
@@ -411,8 +411,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             Container(
               width: MediaQuery.of(context).size.width,
-              margin: const EdgeInsets.all(10),
-              height: 400,
+              margin: const EdgeInsets.all(20),
               decoration: BoxDecoration(
                 boxShadow: const [
                   BoxShadow(
@@ -511,28 +510,394 @@ class _MyHomePageState extends State<MyHomePage> {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Image.asset(''),
+                        Image.asset('assets/rectangle_1209.png'),
                         Column(
                           children: const [
                             Text(
                               "Himalayan Shilajit",
                               style: TextStyle(
                                 fontWeight: FontWeight.bold,
+                                fontSize: 15,
                               ),
                             ),
                             Text(
                               "+ 3 more products",
                               style: TextStyle(
-                                fontWeight: FontWeight.bold,
+                                fontWeight: FontWeight.w600,
+                                fontSize: 15,
                               ),
                             ),
                           ],
                         ),
-                        Text("₹ 14050"),
+                        const Text(
+                          "₹ 14050",
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 16,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  const Divider(
+                    indent: 15,
+                    endIndent: 15,
+                    thickness: 0.75,
+                    height: 32,
+                    color: Colors.black,
+                  ),
+                  Container(
+                    margin: const EdgeInsets.only(
+                      top: 15,
+                      left: 15,
+                      right: 15,
+                    ),
+                    width: double.infinity,
+                    child: const Text(
+                      "Order Status",
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 14,
+                      ),
+                    ),
+                  ),
+                  Container(
+                    margin: const EdgeInsets.only(
+                      top: 20,
+                      left: 18,
+                      right: 18,
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        _orderStatusIcon("vec.png", 0XFFF6F6BF),
+                        Container(
+                          height: 2,
+                          width: 30,
+                          color: Colors.black,
+                        ),
+                        _orderStatusIcon("vec.png", 0XFFF6F6BF),
+                        Container(
+                          height: 2,
+                          width: 30,
+                          color: Colors.black,
+                        ),
+                        _orderStatusIcon("vec.png", 0XFFF6F6BF),
+                        Container(
+                          height: 2,
+                          width: 30,
+                          color: Colors.black,
+                        ),
+                        _orderStatusIcon("vec.png", 0XFFF6F6BF),
+                      ],
+                    ),
+                  ),
+                  Container(
+                    margin: const EdgeInsets.only(
+                      top: 9,
+                      // left: 15,
+                      // right: 15,
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        _orderStatus("Confirmed", "on 24 Aug"),
+                        _orderStatus("Packed", 'in 2 days'),
+                        _orderStatus("Shipped", 'in 4 days'),
+                        _orderStatus("Delivery", "by 28 Aug"),
+                      ],
+                    ),
+                  ),
+                  Container(
+                    padding: const EdgeInsets.symmetric(
+                      vertical: 8,
+                      horizontal: 20,
+                    ),
+                    margin: const EdgeInsets.only(
+                      top: 20,
+                      left: 15,
+                      right: 15,
+                    ),
+                    width: double.infinity,
+                    color: const Color(0xFFDAE9E7),
+                    child: const Text(
+                      "NOTE: Order may be delayed due to heavy rains",
+                      style: TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.w400,
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
+                  const Divider(
+                    indent: 15,
+                    endIndent: 15,
+                    thickness: 0.75,
+                    height: 32,
+                    color: Colors.black,
+                  ),
+                  Container(
+                    margin: const EdgeInsets.only(
+                      left: 15,
+                      top: 20,
+                      bottom: 20,
+                    ),
+                    width: double.infinity,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: const [
+                        Text(
+                          "Delivering To",
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 16,
+                            height: 2,
+                          ),
+                        ),
+                        Text(
+                          "Rithika, 11-B soorya heights,",
+                          style: TextStyle(
+                            fontSize: 16,
+                            height: 1.5,
+                          ),
+                        ),
+                        Text(
+                          "kalmandappam, palakkad, Kerala",
+                          style: TextStyle(
+                            fontSize: 16,
+                            height: 1.5,
+                          ),
+                        )
                       ],
                     ),
                   )
                 ],
+              ),
+            ),
+            Container(
+              width: double.infinity,
+              // color: Colors.yellow,
+              margin: const EdgeInsets.only(
+                top: 40,
+                left: 20,
+                bottom: 20,
+                right: 20,
+              ),
+              child: const Text(
+                "Pay online & Save extra",
+                style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+            ),
+            Container(
+              width: MediaQuery.of(context).size.width,
+              margin: const EdgeInsets.all(20),
+              padding: const EdgeInsets.symmetric(
+                horizontal: 6,
+                vertical: 14,
+              ),
+              decoration: BoxDecoration(
+                boxShadow: const [
+                  BoxShadow(
+                    color: Colors.grey,
+                    offset: Offset(
+                      1.0,
+                      1.0,
+                    ),
+                    blurRadius: 1.0,
+                    spreadRadius: 1.0,
+                  ),
+                  BoxShadow(
+                    color: Colors.white,
+                    offset: Offset(0.0, 0.0),
+                    blurRadius: 0.0,
+                    spreadRadius: 0.0,
+                  ),
+                ],
+                borderRadius: BorderRadius.circular(4),
+              ),
+              child: Column(
+                children: [
+                  SizedBox(
+                    height: 100,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Image.asset(
+                          "assets/PAY_ONLINE_ANIMATION.png",
+                          fit: BoxFit.cover,
+                        ),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            const Text.rich(
+                              TextSpan(
+                                children: [
+                                  TextSpan(
+                                    text: "You're",
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 18,
+                                      letterSpacing: 0.5,
+                                    ),
+                                  ),
+                                  TextSpan(
+                                    text: " losing ",
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      color: Color(0XFFC97B5A),
+                                      fontSize: 18,
+                                      letterSpacing: 0.5,
+                                    ),
+                                  ),
+                                  TextSpan(
+                                    text: "out on extra",
+                                    style: TextStyle(
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.w600,
+                                      letterSpacing: 0.5,
+                                    ),
+                                  )
+                                ],
+                              ),
+                            ),
+                            Row(
+                              children: [
+                                const Text(
+                                  "100",
+                                  style: TextStyle(
+                                    fontSize: 40,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                                Container(
+                                  margin: const EdgeInsets.only(left: 10),
+                                  child: Column(
+                                    children: const [
+                                      Text(
+                                        "KAPIVA",
+                                        style: TextStyle(
+                                          fontSize: 14,
+                                        ),
+                                      ),
+                                      Text(
+                                        "CASH",
+                                        style: TextStyle(
+                                          fontSize: 14,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                )
+                              ],
+                            ),
+                            const Text.rich(
+                              TextSpan(
+                                children: [
+                                  TextSpan(
+                                    text: "since you have opted for ",
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 18,
+                                      letterSpacing: 0.5,
+                                    ),
+                                  ),
+                                  TextSpan(
+                                    text: "COD",
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      color: Color(0XFFC97B5A),
+                                      fontSize: 18,
+                                      letterSpacing: 0.5,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        )
+                      ],
+                    ),
+                  ),
+                  Container(
+                    margin: const EdgeInsets.only(
+                      top: 20,
+                      left: 10,
+                      right: 10,
+                    ),
+                    decoration: BoxDecoration(
+                      border: Border.all(color: Colors.grey, width: 0),
+                      borderRadius: BorderRadius.circular(4),
+                    ),
+                    child: Column(
+                      children: [
+                        Container(
+                          margin: const EdgeInsets.all(10),
+                          child: const Text(
+                            "Pay online now & earn 100 Kapiva Cash in your wallet",
+                          ),
+                        ),
+                        Container(
+                          padding: const EdgeInsets.symmetric(
+                            vertical: 16,
+                            horizontal: 20,
+                          ),
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                              color: const Color(0XFFFFFFFF),
+                              width: 0,
+                            ),
+                            color: const Color(0XFF80A03C),
+                            borderRadius: BorderRadius.circular(4),
+                          ),
+                          width: double.infinity,
+                          child: const Text(
+                            "Continue Shopping",
+                            style: TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                              color: Color(0XFFFFFFFF),
+                              letterSpacing: 0.75,
+                            ),
+                            textAlign: TextAlign.center,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Container(
+              padding: const EdgeInsets.symmetric(
+                vertical: 16,
+                horizontal: 20,
+              ),
+              margin: const EdgeInsets.only(
+                top: 20,
+                left: 20,
+                right: 20,
+                bottom: 20,
+              ),
+              decoration: BoxDecoration(
+                border: Border.all(
+                  color: const Color(0XFF80A03C),
+                ),
+                borderRadius: BorderRadius.circular(4),
+              ),
+              width: double.infinity,
+              child: const Text(
+                "Continue Shopping",
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                  color: Color(0XFF80A03C),
+                  letterSpacing: 0.75,
+                ),
+                textAlign: TextAlign.center,
               ),
             ),
           ],
@@ -540,4 +905,43 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
     );
   }
+}
+
+_orderStatusIcon(String img, dynamic clr) {
+  return Container(
+    width: 30,
+    height: 30,
+    decoration: BoxDecoration(
+      borderRadius: BorderRadius.circular(20),
+      border: Border.all(
+        color: Colors.black,
+        width: 1,
+      ),
+      color: Color(clr),
+    ),
+    child: ClipOval(child: Image.asset('assets/$img')),
+  );
+}
+
+_orderStatus(String text1, String text2) {
+  return Column(
+    crossAxisAlignment: CrossAxisAlignment.center,
+    children: [
+      Text(
+        text1,
+        style: const TextStyle(
+          fontWeight: FontWeight.bold,
+          fontSize: 14,
+          height: 1.5,
+        ),
+      ),
+      Text(
+        text2,
+        style: const TextStyle(
+          fontSize: 12,
+          height: 1.5,
+        ),
+      ),
+    ],
+  );
 }
