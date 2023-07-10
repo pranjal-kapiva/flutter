@@ -12,9 +12,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Kapiva App',
-      theme: ThemeData(
-        primarySwatch: Colors.lightGreen,
-      ),
+      theme: ThemeData(primarySwatch: Colors.green),
       home: const MyHomePage(),
     );
   }
@@ -70,7 +68,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     child: const Text(
                       "Pesonalized for You",
                       style: TextStyle(
-                        fontSize: 16,
+                        fontSize: 18,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
@@ -112,52 +110,70 @@ class _MyHomePageState extends State<MyHomePage> {
                             fit: BoxFit.cover,
                           ),
                         ),
-                        Container(
-                          margin: const EdgeInsets.all(4),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              const Text("Dia Free Juice and Aloe"),
-                              const Text("Garcinia Juice - Diabeties"),
-                              Row(
-                                children: [
-                                  Column(
-                                    children: [
-                                      Row(
-                                        children: const [
-                                          Icon(Icons.star, size: 16),
-                                          Text("4.5/5"),
-                                        ],
-                                      ),
-                                      Row(
-                                        children: const [
-                                          Icon(Icons.currency_rupee, size: 16),
-                                          Text(
-                                            "1500",
-                                            style: TextStyle(
-                                              fontWeight: FontWeight.bold,
+                        Expanded(
+                          child: Container(
+                            margin: const EdgeInsets.all(4),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                const Text("Dia Free Juice and Aloe"),
+                                const Text("Garcinia Juice - Diabeties ..."),
+                                Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Column(
+                                      children: [
+                                        Row(
+                                          children: const [
+                                            Icon(Icons.star, size: 16),
+                                            Text(
+                                              "4.5/5",
+                                              style: TextStyle(
+                                                fontSize: 16,
+                                              ),
                                             ),
-                                          ),
-                                        ],
+                                          ],
+                                        ),
+                                        Row(
+                                          children: const [
+                                            Icon(Icons.currency_rupee,
+                                                size: 16),
+                                            Text(
+                                              "1500",
+                                              style: TextStyle(
+                                                fontWeight: FontWeight.bold,
+                                                fontSize: 16,
+                                                height: 1.4,
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ],
+                                    ),
+                                    // const SizedBox(
+                                    //   width: 70,
+                                    // ),
+                                    ElevatedButton(
+                                      onPressed: () {},
+                                      style: ButtonStyle(
+                                        backgroundColor:
+                                            MaterialStateProperty.all<Color>(
+                                          const Color(0XFF80A03C),
+                                        ),
                                       ),
-                                    ],
-                                  ),
-                                  const SizedBox(
-                                    width: 70,
-                                  ),
-                                  ElevatedButton(
-                                    onPressed: () {},
-                                    child: const Text(
-                                      "BUY NOW",
-                                      style: TextStyle(
-                                        color: Colors.white,
+                                      child: const Text(
+                                        "BUY NOW",
+                                        style: TextStyle(
+                                          color: Colors.white,
+                                        ),
                                       ),
                                     ),
-                                  ),
-                                ],
-                              ),
-                            ],
+                                  ],
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                         // Positioned(
@@ -204,14 +220,14 @@ class _MyHomePageState extends State<MyHomePage> {
                             text: "FOR : ",
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
-                              color: Colors.lightGreen,
-                              fontSize: 14,
+                              color: Color(0XFF80A03C),
+                              fontSize: 15,
                             ),
                           ),
                           TextSpan(
                             text: "Better efficiency & faster results",
                             style: TextStyle(
-                              fontSize: 14,
+                              fontSize: 15,
                               fontWeight: FontWeight.w600,
                             ),
                           )
@@ -222,7 +238,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   Container(
                     margin: const EdgeInsets.only(top: 20),
                     padding: const EdgeInsets.symmetric(
-                      horizontal: 20,
+                      horizontal: 8,
                       vertical: 0,
                     ),
                     decoration: const BoxDecoration(
@@ -233,7 +249,6 @@ class _MyHomePageState extends State<MyHomePage> {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Container(
-                          color: Colors.blue,
                           margin: const EdgeInsets.all(6),
                           child: Image.network(
                             'https://4wdpmdxj.cdn.imgeng.in/https://cdn11.bigcommerce.com/s-5h8rqg02f8/images/stencil/800x800/products/467/3608/shilajit_copy_1__62890.1683095278.jpg?c=1',
@@ -241,54 +256,57 @@ class _MyHomePageState extends State<MyHomePage> {
                             fit: BoxFit.cover,
                           ),
                         ),
-                        Container(
-                          margin: const EdgeInsets.all(4),
-                          height: MediaQuery.of(context).size.height * 0.08,
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: const [
-                              Text(
-                                "Congratulations!",
-                                style: TextStyle(
-                                  fontWeight: FontWeight.bold,
+                        Expanded(
+                          child: Container(
+                            margin: const EdgeInsets.all(4),
+                            height: MediaQuery.of(context).size.height * 0.08,
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: const [
+                                Text(
+                                  "Congratulations!",
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 14,
+                                  ),
                                 ),
-                              ),
-                              Text.rich(
-                                TextSpan(
-                                  children: [
-                                    TextSpan(
-                                      text: "Your ",
-                                      style: TextStyle(
-                                        fontWeight: FontWeight.w400,
-                                        fontSize: 12,
-                                        fontStyle: FontStyle.italic,
-                                        height: 1.5,
+                                Text.rich(
+                                  TextSpan(
+                                    children: [
+                                      TextSpan(
+                                        text: "Your ",
+                                        style: TextStyle(
+                                          fontWeight: FontWeight.w400,
+                                          fontSize: 14,
+                                          fontStyle: FontStyle.italic,
+                                          height: 1.5,
+                                        ),
                                       ),
-                                    ),
-                                    TextSpan(
-                                      text: "Shilajit Gold Resins ",
-                                      style: TextStyle(
-                                        fontSize: 12,
-                                        fontWeight: FontWeight.w600,
-                                        fontStyle: FontStyle.italic,
-                                        height: 1.5,
+                                      TextSpan(
+                                        text: "Shilajit Gold Resins ",
+                                        style: TextStyle(
+                                          fontSize: 14,
+                                          fontWeight: FontWeight.w600,
+                                          fontStyle: FontStyle.italic,
+                                          height: 1.5,
+                                        ),
                                       ),
-                                    ),
-                                    TextSpan(
-                                      text:
-                                          "will be \ndelivered with your order.",
-                                      style: TextStyle(
-                                        fontSize: 12,
-                                        fontWeight: FontWeight.w400,
-                                        fontStyle: FontStyle.italic,
-                                        height: 1.5,
-                                      ),
-                                    )
-                                  ],
+                                      TextSpan(
+                                        text:
+                                            "will be \ndelivered with your order.",
+                                        style: TextStyle(
+                                          fontSize: 14,
+                                          fontWeight: FontWeight.w400,
+                                          fontStyle: FontStyle.italic,
+                                          height: 1.5,
+                                        ),
+                                      )
+                                    ],
+                                  ),
                                 ),
-                              ),
-                            ],
+                              ],
+                            ),
                           ),
                         ),
                       ],
@@ -328,8 +346,9 @@ class _MyHomePageState extends State<MyHomePage> {
                   const Text(
                     "Book a slot now and get a personalized plan",
                     style: TextStyle(
-                      fontSize: 13,
+                      fontSize: 14,
                       fontWeight: FontWeight.w500,
+                      height: 1.5,
                     ),
                   ),
                   Container(
@@ -347,7 +366,7 @@ class _MyHomePageState extends State<MyHomePage> {
                               padding: const EdgeInsets.only(
                                   top: 8, bottom: 8, left: 12, right: 8),
                               decoration: BoxDecoration(
-                                color: Colors.lightGreen,
+                                color: const Color(0XFF80A03C),
                                 borderRadius: BorderRadius.circular(8),
                               ),
                               child: Row(
@@ -404,7 +423,7 @@ class _MyHomePageState extends State<MyHomePage> {
               child: const Text(
                 "Order Summary",
                 style: TextStyle(
-                  fontSize: 16,
+                  fontSize: 18,
                   fontWeight: FontWeight.w600,
                 ),
               ),
@@ -441,20 +460,24 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                     color: const Color(0xFFDAE9E7),
                     child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        SizedBox(
+                        Container(
+                          margin: const EdgeInsets.only(right: 6),
                           child: Image.asset(
                             "assets/path_img.png",
                             fit: BoxFit.cover,
-                            width: 20,
+                            width: 24,
                           ),
                         ),
-                        const Text(
-                          "You will earn ₹ 100 in Kapiva wallet upon delivery",
-                          style: TextStyle(
-                            fontSize: 12,
-                            fontWeight: FontWeight.w400,
+                        const Expanded(
+                          child: Text(
+                            "You will earn ₹ 100 in Kapiva wallet upon delivery",
+                            style: TextStyle(
+                              fontSize: 12,
+                              fontWeight: FontWeight.w400,
+                            ),
                           ),
                         ),
                       ],
@@ -517,14 +540,14 @@ class _MyHomePageState extends State<MyHomePage> {
                               "Himalayan Shilajit",
                               style: TextStyle(
                                 fontWeight: FontWeight.bold,
-                                fontSize: 15,
+                                fontSize: 16,
                               ),
                             ),
                             Text(
                               "+ 3 more products",
                               style: TextStyle(
-                                fontWeight: FontWeight.w600,
-                                fontSize: 15,
+                                fontWeight: FontWeight.w400,
+                                fontSize: 16,
                               ),
                             ),
                           ],
@@ -570,25 +593,25 @@ class _MyHomePageState extends State<MyHomePage> {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        _orderStatusIcon("vec.png", 0XFFF6F6BF),
+                        _orderStatusIcon("confirmed.png", 0XFFF6F6BF),
                         Container(
                           height: 2,
                           width: 30,
                           color: Colors.black,
                         ),
-                        _orderStatusIcon("vec.png", 0XFFF6F6BF),
+                        _orderStatusIcon("vec.png", 0XFFFFFFFF),
                         Container(
                           height: 2,
                           width: 30,
                           color: Colors.black,
                         ),
-                        _orderStatusIcon("vec.png", 0XFFF6F6BF),
+                        _orderStatusIcon("path_24.png", 0XFFFFFFFF),
                         Container(
                           height: 2,
                           width: 30,
                           color: Colors.black,
                         ),
-                        _orderStatusIcon("vec.png", 0XFFF6F6BF),
+                        _orderStatusIcon("vector_1.png", 0XFFFFFFFF),
                       ],
                     ),
                   ),
@@ -601,30 +624,34 @@ class _MyHomePageState extends State<MyHomePage> {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
-                        _orderStatus("Confirmed", "on 24 Aug"),
-                        _orderStatus("Packed", 'in 2 days'),
-                        _orderStatus("Shipped", 'in 4 days'),
-                        _orderStatus("Delivery", "by 28 Aug"),
+                        _orderStatus("Confirmed", "on 24 Aug", 0XFF80A03C),
+                        _orderStatus("Packed", 'in 2 days', 0XFF000000),
+                        _orderStatus("Shipped", 'in 4 days', 0XFF000000),
+                        _orderStatus("Delivery", "by 28 Aug", 0XFF000000),
                       ],
                     ),
                   ),
                   Container(
                     padding: const EdgeInsets.symmetric(
                       vertical: 8,
-                      horizontal: 20,
+                      horizontal: 10,
                     ),
                     margin: const EdgeInsets.only(
                       top: 20,
                       left: 15,
                       right: 15,
                     ),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(5),
+                      color: const Color(0xFFF4E5DE),
+                    ),
                     width: double.infinity,
-                    color: const Color(0xFFDAE9E7),
                     child: const Text(
                       "NOTE: Order may be delayed due to heavy rains",
                       style: TextStyle(
-                        fontSize: 14,
+                        fontSize: 12,
                         fontWeight: FontWeight.w400,
+                        color: Color(0XFFC97B5A),
                       ),
                       textAlign: TextAlign.center,
                     ),
@@ -639,7 +666,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   Container(
                     margin: const EdgeInsets.only(
                       left: 15,
-                      top: 20,
+                      // top: 20,
                       bottom: 20,
                     ),
                     width: double.infinity,
@@ -650,21 +677,21 @@ class _MyHomePageState extends State<MyHomePage> {
                           "Delivering To",
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
-                            fontSize: 16,
+                            fontSize: 14,
                             height: 2,
                           ),
                         ),
                         Text(
                           "Rithika, 11-B soorya heights,",
                           style: TextStyle(
-                            fontSize: 16,
+                            fontSize: 14,
                             height: 1.5,
                           ),
                         ),
                         Text(
                           "kalmandappam, palakkad, Kerala",
                           style: TextStyle(
-                            fontSize: 16,
+                            fontSize: 14,
                             height: 1.5,
                           ),
                         )
@@ -721,7 +748,7 @@ class _MyHomePageState extends State<MyHomePage> {
               child: Column(
                 children: [
                   SizedBox(
-                    height: 100,
+                    height: 80,
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
@@ -729,95 +756,97 @@ class _MyHomePageState extends State<MyHomePage> {
                           "assets/PAY_ONLINE_ANIMATION.png",
                           fit: BoxFit.cover,
                         ),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            const Text.rich(
-                              TextSpan(
+                        Expanded(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              const Text.rich(
+                                TextSpan(
+                                  children: [
+                                    TextSpan(
+                                      text: "You're",
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 16,
+                                        letterSpacing: 0.5,
+                                      ),
+                                    ),
+                                    TextSpan(
+                                      text: " losing ",
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        color: Color(0XFFC97B5A),
+                                        fontSize: 16,
+                                        letterSpacing: 0.5,
+                                      ),
+                                    ),
+                                    TextSpan(
+                                      text: "out on extra",
+                                      style: TextStyle(
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.w600,
+                                        letterSpacing: 0.5,
+                                      ),
+                                    )
+                                  ],
+                                ),
+                              ),
+                              Row(
                                 children: [
-                                  TextSpan(
-                                    text: "You're",
+                                  const Text(
+                                    "100",
                                     style: TextStyle(
+                                      fontSize: 32,
                                       fontWeight: FontWeight.bold,
-                                      fontSize: 18,
-                                      letterSpacing: 0.5,
                                     ),
                                   ),
-                                  TextSpan(
-                                    text: " losing ",
-                                    style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      color: Color(0XFFC97B5A),
-                                      fontSize: 18,
-                                      letterSpacing: 0.5,
-                                    ),
-                                  ),
-                                  TextSpan(
-                                    text: "out on extra",
-                                    style: TextStyle(
-                                      fontSize: 18,
-                                      fontWeight: FontWeight.w600,
-                                      letterSpacing: 0.5,
+                                  Container(
+                                    margin: const EdgeInsets.only(left: 5),
+                                    child: Column(
+                                      children: const [
+                                        Text(
+                                          "KAPIVA",
+                                          style: TextStyle(
+                                            fontSize: 12,
+                                          ),
+                                        ),
+                                        Text(
+                                          "CASH",
+                                          style: TextStyle(
+                                            fontSize: 12,
+                                          ),
+                                        ),
+                                      ],
                                     ),
                                   )
                                 ],
                               ),
-                            ),
-                            Row(
-                              children: [
-                                const Text(
-                                  "100",
-                                  style: TextStyle(
-                                    fontSize: 40,
-                                    fontWeight: FontWeight.bold,
-                                  ),
+                              const Text.rich(
+                                TextSpan(
+                                  children: [
+                                    TextSpan(
+                                      text: "since you have opted for ",
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 16,
+                                        letterSpacing: 0.5,
+                                      ),
+                                    ),
+                                    TextSpan(
+                                      text: "COD",
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        color: Color(0XFFC97B5A),
+                                        fontSize: 16,
+                                        letterSpacing: 0.5,
+                                      ),
+                                    ),
+                                  ],
                                 ),
-                                Container(
-                                  margin: const EdgeInsets.only(left: 10),
-                                  child: Column(
-                                    children: const [
-                                      Text(
-                                        "KAPIVA",
-                                        style: TextStyle(
-                                          fontSize: 14,
-                                        ),
-                                      ),
-                                      Text(
-                                        "CASH",
-                                        style: TextStyle(
-                                          fontSize: 14,
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                )
-                              ],
-                            ),
-                            const Text.rich(
-                              TextSpan(
-                                children: [
-                                  TextSpan(
-                                    text: "since you have opted for ",
-                                    style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 18,
-                                      letterSpacing: 0.5,
-                                    ),
-                                  ),
-                                  TextSpan(
-                                    text: "COD",
-                                    style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      color: Color(0XFFC97B5A),
-                                      fontSize: 18,
-                                      letterSpacing: 0.5,
-                                    ),
-                                  ),
-                                ],
                               ),
-                            ),
-                          ],
+                            ],
+                          ),
                         )
                       ],
                     ),
@@ -835,36 +864,41 @@ class _MyHomePageState extends State<MyHomePage> {
                     child: Column(
                       children: [
                         Container(
-                          margin: const EdgeInsets.all(10),
+                          margin: const EdgeInsets.symmetric(
+                              vertical: 10, horizontal: 2),
                           child: const Text(
                             "Pay online now & earn 100 Kapiva Cash in your wallet",
+                            style: TextStyle(fontSize: 11),
                           ),
                         ),
-                        Container(
-                          padding: const EdgeInsets.symmetric(
-                            vertical: 16,
-                            horizontal: 20,
-                          ),
-                          decoration: BoxDecoration(
-                            border: Border.all(
-                              color: const Color(0XFFFFFFFF),
-                              width: 0,
+                        InkWell(
+                          onTap: () {},
+                          child: Container(
+                            padding: const EdgeInsets.symmetric(
+                              vertical: 14,
+                              // horizontal: 20,
                             ),
-                            color: const Color(0XFF80A03C),
-                            borderRadius: BorderRadius.circular(4),
-                          ),
-                          width: double.infinity,
-                          child: const Text(
-                            "Continue Shopping",
-                            style: TextStyle(
-                              fontSize: 20,
-                              fontWeight: FontWeight.bold,
-                              color: Color(0XFFFFFFFF),
-                              letterSpacing: 0.75,
+                            decoration: BoxDecoration(
+                              border: Border.all(
+                                color: const Color(0XFFFFFFFF),
+                                width: 0,
+                              ),
+                              color: const Color(0XFF80A03C),
+                              borderRadius: BorderRadius.circular(4),
                             ),
-                            textAlign: TextAlign.center,
+                            width: double.infinity,
+                            child: const Text(
+                              "Convert to Online",
+                              style: TextStyle(
+                                fontSize: 16,
+                                fontWeight: FontWeight.bold,
+                                color: Color(0XFFFFFFFF),
+                                letterSpacing: 0.75,
+                              ),
+                              textAlign: TextAlign.center,
+                            ),
                           ),
-                        ),
+                        )
                       ],
                     ),
                   ),
@@ -872,10 +906,168 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ),
             Container(
-              padding: const EdgeInsets.symmetric(
-                vertical: 16,
+              margin: const EdgeInsets.symmetric(
+                vertical: 20,
                 horizontal: 20,
               ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Expanded(
+                    flex: 1,
+                    child: Stack(
+                      children: [
+                        Container(
+                          height: 140,
+                          decoration: BoxDecoration(
+                            boxShadow: const [
+                              BoxShadow(
+                                color: Colors.grey,
+                                offset: Offset(
+                                  1.0,
+                                  1.0,
+                                ),
+                                blurRadius: 1.0,
+                                spreadRadius: 1.0,
+                              ),
+                              BoxShadow(
+                                color: Colors.white,
+                                offset: Offset(0.0, 0.0),
+                                blurRadius: 0.0,
+                                spreadRadius: 0.0,
+                              ),
+                            ],
+                            borderRadius: BorderRadius.circular(4),
+                          ),
+                          padding: const EdgeInsets.symmetric(
+                            vertical: 28,
+                          ),
+                          margin: const EdgeInsets.only(top: 50, right: 5),
+                          child: Column(
+                            children: [
+                              const Text(
+                                'Follow us on',
+                                style: TextStyle(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                              Container(
+                                margin: const EdgeInsets.only(
+                                  top: 30,
+                                  left: 4,
+                                  right: 4,
+                                ),
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    _orderStatusIcon(
+                                        "confirmed.png", 0XFFF6F6BF),
+                                    _orderStatusIcon("vec.png", 0XFFFFFFFF),
+                                    _orderStatusIcon("path_24.png", 0XFFFFFFFF),
+                                    _orderStatusIcon(
+                                        "vector_1.png", 0XFFFFFFFF),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        _postionedAvatar("Ellipse43.png"),
+                      ],
+                    ),
+                  ),
+                  Expanded(
+                    flex: 1,
+                    child: Stack(
+                      children: [
+                        Container(
+                          height: 140,
+                          decoration: BoxDecoration(
+                            boxShadow: const [
+                              BoxShadow(
+                                color: Colors.grey,
+                                offset: Offset(
+                                  1.0,
+                                  1.0,
+                                ),
+                                blurRadius: 1.0,
+                                spreadRadius: 1.0,
+                              ),
+                              BoxShadow(
+                                color: Colors.white,
+                                offset: Offset(0.0, 0.0),
+                                blurRadius: 0.0,
+                                spreadRadius: 0.0,
+                              ),
+                            ],
+                            borderRadius: BorderRadius.circular(4),
+                          ),
+                          padding: const EdgeInsets.symmetric(
+                            vertical: 28,
+                          ),
+                          margin: const EdgeInsets.only(top: 50, left: 5),
+                          child: Column(
+                            children: [
+                              const Text(
+                                'Contact us',
+                                style: TextStyle(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                              Container(
+                                margin: const EdgeInsets.only(
+                                  top: 8,
+                                  left: 4,
+                                  right: 4,
+                                ),
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: const [
+                                    Icon(Icons.mail_outline),
+                                    SizedBox(
+                                      width: 4,
+                                    ),
+                                    Text(
+                                      "info@kapiva.in",
+                                      style: TextStyle(fontSize: 12),
+                                    )
+                                  ],
+                                ),
+                              ),
+                              Container(
+                                margin: const EdgeInsets.only(
+                                  top: 8,
+                                  left: 4,
+                                  right: 4,
+                                ),
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: const [
+                                    Icon(Icons.call),
+                                    SizedBox(
+                                      width: 4,
+                                    ),
+                                    Text(
+                                      "1800-274-2575",
+                                      style: TextStyle(fontSize: 12),
+                                    )
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        _postionedAvatar("Ellipse43.png"),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Container(
               margin: const EdgeInsets.only(
                 top: 20,
                 left: 20,
@@ -886,20 +1078,72 @@ class _MyHomePageState extends State<MyHomePage> {
                 border: Border.all(
                   color: const Color(0XFF80A03C),
                 ),
-                borderRadius: BorderRadius.circular(4),
               ),
               width: double.infinity,
-              child: const Text(
-                "Continue Shopping",
-                style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                  color: Color(0XFF80A03C),
-                  letterSpacing: 0.75,
+              child: ElevatedButton(
+                style: ButtonStyle(
+                  backgroundColor: MaterialStateProperty.all<Color>(
+                    Colors.white,
+                  ),
+                  padding: MaterialStateProperty.all<EdgeInsets>(
+                    const EdgeInsets.symmetric(
+                      vertical: 14,
+                      // horizontal: 20,
+                    ),
+                  ),
+                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                    RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(4),
+                    ),
+                  ),
+                  shadowColor: MaterialStateProperty.all<Color>(
+                    Colors.transparent,
+                  ),
                 ),
-                textAlign: TextAlign.center,
+                onPressed: () {},
+                child: const Text(
+                  "Continue Shopping",
+                  style: TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                    color: Color(0XFF80A03C),
+                    letterSpacing: 0.75,
+                  ),
+                ),
               ),
             ),
+            // InkWell(
+            //   onTap: () {},
+            //   child: Container(
+            //     padding: const EdgeInsets.symmetric(
+            //       vertical: 16,
+            //       horizontal: 20,
+            //     ),
+            //     margin: const EdgeInsets.only(
+            //       top: 20,
+            //       left: 20,
+            //       right: 20,
+            //       bottom: 20,
+            //     ),
+            //     decoration: BoxDecoration(
+            //       border: Border.all(
+            //         color: const Color(0XFF80A03C),
+            //       ),
+            //       borderRadius: BorderRadius.circular(4),
+            //     ),
+            //     width: double.infinity,
+            //     child: const Text(
+            //       "Continue Shopping",
+            //       style: TextStyle(
+            //         fontSize: 20,
+            //         fontWeight: FontWeight.bold,
+            //         color: Color(0XFF80A03C),
+            //         letterSpacing: 0.75,
+            //       ),
+            //       textAlign: TextAlign.center,
+            //     ),
+            //   ),
+            // ),
           ],
         ),
       ),
@@ -909,8 +1153,8 @@ class _MyHomePageState extends State<MyHomePage> {
 
 _orderStatusIcon(String img, dynamic clr) {
   return Container(
-    width: 30,
-    height: 30,
+    width: 32,
+    height: 32,
     decoration: BoxDecoration(
       borderRadius: BorderRadius.circular(20),
       border: Border.all(
@@ -919,11 +1163,13 @@ _orderStatusIcon(String img, dynamic clr) {
       ),
       color: Color(clr),
     ),
-    child: ClipOval(child: Image.asset('assets/$img')),
+    child: ClipOval(
+      child: Image.asset('assets/$img'),
+    ),
   );
 }
 
-_orderStatus(String text1, String text2) {
+_orderStatus(String text1, String text2, dynamic clr) {
   return Column(
     crossAxisAlignment: CrossAxisAlignment.center,
     children: [
@@ -937,11 +1183,28 @@ _orderStatus(String text1, String text2) {
       ),
       Text(
         text2,
-        style: const TextStyle(
+        style: TextStyle(
           fontSize: 12,
           height: 1.5,
+          color: Color(clr),
         ),
       ),
     ],
+  );
+}
+
+_postionedAvatar(String img) {
+  return Positioned(
+    top: 16,
+    left: 50,
+    child: CircleAvatar(
+      radius: 30,
+      child: ClipOval(
+        child: Image.asset(
+          'assets/$img',
+          fit: BoxFit.cover,
+        ),
+      ),
+    ),
   );
 }
