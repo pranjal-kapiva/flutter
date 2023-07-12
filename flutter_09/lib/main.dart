@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
+
+const String doctorUrl =
+    "https://www.kapiva.in/consult-a-doctor/?utm_source=menu&utm_medium=app";
 
 void main() {
   runApp(const MyApp());
@@ -98,7 +102,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         style: BorderStyle.solid,
                       ),
                     ),
-                    height: MediaQuery.of(context).size.height * 0.12,
+                    // height: MediaQuery.of(context).size.height * 0.13,
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -244,7 +248,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     decoration: const BoxDecoration(
                       color: Color.fromARGB(255, 240, 252, 227),
                     ),
-                    height: MediaQuery.of(context).size.height * 0.09,
+                    height: MediaQuery.of(context).size.height * 0.1,
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
@@ -259,7 +263,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         Expanded(
                           child: Container(
                             margin: const EdgeInsets.all(4),
-                            height: MediaQuery.of(context).size.height * 0.08,
+                            height: MediaQuery.of(context).size.height * 0.09,
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -373,20 +377,29 @@ class _MyHomePageState extends State<MyHomePage> {
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
                                 crossAxisAlignment: CrossAxisAlignment.center,
-                                children: const [
-                                  SizedBox(
+                                children: [
+                                  const SizedBox(
                                     width: 24,
                                   ),
-                                  Text(
-                                    "Book your 1st consulation",
-                                    style: TextStyle(
-                                      fontWeight: FontWeight.w700,
-                                      fontSize: 16,
-                                      color: Colors.white,
-                                      letterSpacing: 0.35,
+                                  InkWell(
+                                    onTap: () {
+                                      Navigator.of(context).pop();
+                                      launchUrl(
+                                        Uri.parse(doctorUrl),
+                                        mode: LaunchMode.inAppWebView,
+                                      );
+                                    },
+                                    child: const Text(
+                                      "Book your 1st consulation",
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.w700,
+                                        fontSize: 16,
+                                        color: Colors.white,
+                                        letterSpacing: 0.35,
+                                      ),
                                     ),
                                   ),
-                                  Icon(
+                                  const Icon(
                                     Icons.keyboard_double_arrow_right,
                                     color: Colors.white,
                                     size: 30,
@@ -829,8 +842,8 @@ class _MyHomePageState extends State<MyHomePage> {
                                       text: "since you have opted for ",
                                       style: TextStyle(
                                         fontWeight: FontWeight.bold,
-                                        fontSize: 16,
-                                        letterSpacing: 0.5,
+                                        fontSize: 15,
+                                        letterSpacing: 0.25,
                                       ),
                                     ),
                                     TextSpan(
@@ -838,8 +851,8 @@ class _MyHomePageState extends State<MyHomePage> {
                                       style: TextStyle(
                                         fontWeight: FontWeight.bold,
                                         color: Color(0XFFC97B5A),
-                                        fontSize: 16,
-                                        letterSpacing: 0.5,
+                                        fontSize: 1,
+                                        letterSpacing: 0.25,
                                       ),
                                     ),
                                   ],
@@ -1100,7 +1113,9 @@ class _MyHomePageState extends State<MyHomePage> {
                     Colors.transparent,
                   ),
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  print("Congrats");
+                },
                 child: const Text(
                   "Continue Shopping",
                   style: TextStyle(
